@@ -28,13 +28,21 @@ function changeBG() {
 
 var map;
 
+  var LatLng = {lat: 42.341719, lng: -83.060042};
       function initialize() {
         map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 2,
-          center: new google.maps.LatLng(2.8,-187.3),
+          zoom: 10,
+          center: LatLng,
           mapTypeId: 'terrain'
+
         });
 
+        var marker = new google.maps.Marker({
+          position: LatLng,
+          title:"Hello World!"
+        });
+
+        marker.setMap(map);
         // Create a <script> tag and set the USGS URL as the source.
         var script = document.createElement('script');
         // (In this example we use a locally stored copy instead.)
@@ -43,19 +51,7 @@ var map;
         document.getElementsByTagName('head')[0].appendChild(script);
       }
 
-      // Loop through the results array and place a marker for each
-      // set of coordinates.
-      window.eqfeed_callback = function(results) {
-        for (var i = 0; i < results.features.length; i++) {
-          var coords = results.features[i].geometry.coordinates;
-          var latLng = new google.maps.LatLng(coords[1],coords[0]);
-          var marker = new google.maps.Marker({
-            position: latLng,
-            map: map
-          });
-        }
-
-      }
+      
 
 
 function showDest(position) {
