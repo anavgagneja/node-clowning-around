@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gmWebApp>
+  <AppID>92480394</AppID>
+  <AppType>RemoteHigh</AppType>
+  <FriendlyName>hello-ngi</FriendlyName>
+  <VehicleStatus>Drive</VehicleStatus>
+  <AutoStart>false</AutoStart>
+  <AppCategory>General</AppCategory>
+  <IconURL>Icon.png</IconURL>
+  <MainURL>index.html</MainURL>
+  <AppVersion>0.1.0</AppVersion>
+  <SetupURL>setup.html</SetupURL>
+  <LocalPath>App92480394</LocalPath>
+  <Developer>anav</Developer>
+  <TrustedApp>false</TrustedApp>
+  <RequestedBy>1</RequestedBy>
+  <TestApp>true</TestApp>
+  <VIN>ALLVINS</VIN>
+  <Description>
+    <de>Hallo Welt!</de>
+    <en>Hellow World!</en>
+    <es>Hola Mundo!</es>
+    <fr>Bonjour le monde!</fr>
+    <it>Ciao mondo!</it>
+    <nl>Hallo Wereld!</nl>
+    <pl>Witaj świecie!</pl>
+    <pt>Olá Mundo!</pt>
+  </Description>
+</gmWebApp>

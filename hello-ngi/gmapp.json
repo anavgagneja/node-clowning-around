@@ -1,0 +1,12 @@
+{
+  "name":"hello-ngi",
+  "id":"92480394",
+  "version": "0.1.0",
+  "src": "src",
+  "dist": "dist",
+  "main": "index.html",
+  "icon": "Icon.png",
+  "developer": "anav",
+  "category":"General",
+  "type":"RemoteHigh"
+}
