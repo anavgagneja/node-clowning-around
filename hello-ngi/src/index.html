@@ -1,8 +1,47 @@
 <!DOCTYPE html>
-   
 <html>
   <head>
-    <title>hello-ngi</title>
+
+    <style>
+           #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+
+      <script>
+      var map;
+
+      function initialize() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 2,
+          center: new google.maps.LatLng(2.8,-187.3),
+          mapTypeId: 'terrain'
+        });
+
+        // Create a <script> tag and set the USGS URL as the source.
+        var script = document.createElement('script');
+        // (In this example we use a locally stored copy instead.)
+        // script.src = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp';
+        script.src = 'https://developers.google.com/maps/documentation/javascript/tutorials/js/earthquake_GeoJSONP.js';
+        document.getElementsByTagName('head')[0].appendChild(script);
+      }
+
+      // Loop through the results array and place a marker for each
+      // set of coordinates.
+      window.eqfeed_callback = function(results) {
+        for (var i = 0; i < results.features.length; i++) {
+          var coords = results.features[i].geometry.coordinates;
+          var latLng = new google.maps.LatLng(coords[1],coords[0]);
+          var marker = new google.maps.Marker({
+            position: latLng,
+            map: map
+          });
+        }
+      }
+    </script>
+
+    <title>Hello World</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <!-- Base css, but you'll likely want to keep them -->
@@ -15,17 +54,18 @@
     <script src="GMLIB/system.js"></script>
     <!-- Uncomment libraries as you need them: -->
     <!-- <script src="GMLIB/comm.js"></script> -->
-     <script src="GMLIB/io.js"></script> 
+    <!-- <script src="GMLIB/io.js"></script> -->
     <!-- <script src="GMLIB/media.js"></script> -->
     <!-- <script src="GMLIB/monitor.js"></script> -->
-     <script src="GMLIB/nav.js"></script> 
+    <!-- <script src="GMLIB/nav.js"></script> -->
     <!-- <script src="GMLIB/phone.js"></script> -->
-    <script src="GMLIB/ui.js"></script> 
+    <!-- <script src="GMLIB/ui.js"></script> -->
     <!-- <script src="GMLIB/util.js"></script> -->
     <!-- <script src="GMLIB/voice.js"></script> -->
 
+
   </head>
-  <body id="body">
+  <body>
   <div id="wrapper">
     <div id="close"><img src="images/close.png" onclick="gm.system.closeApp()" alt="close"></div>
     <div id="main">
@@ -36,6 +76,12 @@
       <h1>Location:</h1>
       <div id="location">??</div>
     </div>
+
+     <div id="map"></div>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjC_9L3S2tSQWdTqJ2JRlIDPsYbyVwWo&callback=initialize">
+    </script>
+
   </div>
 
   <!-- Your app code: -->
