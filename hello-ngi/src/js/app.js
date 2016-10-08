@@ -9,13 +9,12 @@ function getPos() {
 	  primaryButtonText: 'x',
 	  primaryAction: function fixBG() {
 	  	document.body.style.backgroundImage= "none";
-	document.getElementById('audio').pause();
+		document.getElementById('audio').pause();
 	  },
 	  secondaryButtonText: '',
 	  secondaryAction: function hangWithYoko() {}
 	})
 	changeBG();
-	initMap();
 }
 
 function changeBG() {
@@ -24,12 +23,6 @@ function changeBG() {
 }
 
 
-function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-      }
 
 function showDest(position) {
 	var location = position.coords.latitude + " " + position.coords.longitude;
