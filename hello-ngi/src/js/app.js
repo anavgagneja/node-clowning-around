@@ -35,7 +35,11 @@ function initMap() {
 
 
 function signal() {
-	
+	var firebaseRef = firebase.database().ref();
+	firebaseRef.push({
+		latitude: lati,
+		longitude: longi
+	});
 }
 
 
