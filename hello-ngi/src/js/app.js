@@ -6,8 +6,9 @@
 	function processPosition(position) {
 		lati = position.coords.latitude;
 		longi = position.coords.longitude;
-		console.log(lati);
-		console.log(longi);
+		//console.log(lati);
+		//console.log(longi);
+		danger = false;
 		initMap();
 	}
 
@@ -18,6 +19,7 @@
 
 	var map;
 	var marker;
+	var danger = false;
 	function initMap() {
 		var myLatLng = {lat: parseFloat(lati), lng: parseFloat(longi)};
 		map = new google.maps.Map(document.getElementById('map'), {
@@ -32,23 +34,35 @@
 			position: myLatLng,
 			map: map,
 			title: 'My Car',
-			icon: './images/car.png',
-			animation: google.maps.Animation.DROP
+			icon: './images/car.png'
 
 		});
 
 		firebaseRef.on('child_added', function(data) {
 
-			var lati = data.child("latitude").val();
-			var longi = data.child("longitude").val();
+			var lati2 = data.child("latitude").val();
+			var longi2 = data.child("longitude").val();
 			marker = new google.maps.Marker({
-				position: {lat: parseFloat(lati), lng: parseFloat(longi)},
+				position: {lat: parseFloat(lati2), lng: parseFloat(longi2)},
 				map: map,
 				icon: './images/clown.png',
 				animation: google.maps.Animation.DROP
 			});
+			var R = 6371e3;
+			var angle1 = lati * (Math.PI/180);
+			var angle2 = lati2* (Math.PI/180);
+			var changeAngle = (lati2-lati)* (Math.PI/180);
+			var changeLon = (longi2-longi)* (Math.PI/180);
 
+			var a = Math.sin(changeAngle/2) * Math.sin(changeAngle/2) + Math.cos(angle1) * Math.cos(angle2) * Math.sin(changeLon/2)*Math.sin(changeLon/2);
+			var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+			var d = (R * c)/100;
+			console.log(d);
+			if(d < 10) {
+				danger = true;
+			}
 		});
+		dangerAlert();
 	}
 
 
@@ -65,6 +79,19 @@
 		});
 	}
 
+	function dangerAlert() {
+		if(danger == true) {
+			console.log(danger);
+			var war = document.getElementById('warning');
+			war.innerHTML="DANGER: Clown spotted nearby."; 
+			war.style.color= "red";
+		} else {
+			console.log(danger);
+			var war = document.getElementById('warning');
+			war.innerHTML="You are not currently in any immediate danger."; 
+			war.style.color= "green";
+		}
+	}
 
 	gm.info.getCurrentPosition(processPosition, true);
 	gm.info.watchVehicleData(getPos, ['gps_lat','gps_long']);

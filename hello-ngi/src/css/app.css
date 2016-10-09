@@ -37,8 +37,6 @@ body {
 
 }
 
-
-
 .beforeBtn {
 
   background-color: black;
@@ -67,3 +65,21 @@ body {
   cursor: pointer;
 
 }
+
+#warning {
+  background-color: black; 
+  margin-top: 10px; 
+  margin-bottom: -20px;
+  margin-left:10px;
+  float:left;
+  color: #65E33B;
+  
+}
+@-webkit-keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #FF1177, 0 0 10px #FF1177, 0 0 10px #FF1177, 0 0 10px #FF1177, 0 0 10px #FF1177;
+  }
+  to {
+ text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #FF1177, 0 0 10px #FF1177, 0 0 10px #FF1177, 0 0 10px #FF1177, 0 0 10px #FF1177;  }
+}
+
