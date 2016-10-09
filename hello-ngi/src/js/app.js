@@ -1,3 +1,4 @@
+	//Hi :)
 	var lati;
 	var longi;
 	var firebaseRef = firebase.database().ref();

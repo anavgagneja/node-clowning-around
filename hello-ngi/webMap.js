@@ -2,13 +2,13 @@
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
-
+var firebaseRef = firebase.database().ref();
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
-          zoom: 6
+          zoom: 12
         });
-        var infoWindow = new google.maps.InfoWindow({map: map});
+        
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -18,9 +18,22 @@
               lng: position.coords.longitude
             };
 
-            infoWindow.setPosition(pos);
             
+           
             map.setCenter(pos);
+           
+            firebaseRef.on('child_added', function(data) {
+
+              var lati = data.child("latitude").val();
+              var longi = data.child("longitude").val();
+              marker = new google.maps.Marker({
+              position: {lat: parseFloat(lati), lng: parseFloat(longi)},
+              map: map
+
+              });
+          });
+
+
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
@@ -36,3 +49,4 @@
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
+
