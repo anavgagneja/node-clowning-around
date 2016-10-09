@@ -18,6 +18,7 @@
 
 	var map;
 	var marker;
+	var marker2;
 	var danger = false;
 	// var marker2;
 	function initMap() {
@@ -47,12 +48,12 @@
 			var infowindow = new google.maps.InfoWindow({
           		content: contentString
         	});
-			marker = new google.maps.Marker({
+			marker2 = new google.maps.Marker({
 				position: {lat: parseFloat(lati2), lng: parseFloat(longi2)},
 				map: map,
 				icon: './images/clown.png',
 			});
-			infowindow.open(map, marker);
+			infowindow.open(map, marker2);
 			var R = 6371e3;
 			var angle1 = lati * (Math.PI / 180);
 			var angle2 = lati2* (Math.PI / 180);
