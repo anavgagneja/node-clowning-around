@@ -64,7 +64,7 @@ var firebaseRef = firebase.database().ref();
         marker2 = new google.maps.Marker({
           position: pos,
           map: map,
-          icon: "src/images/car.png"
+          icon: "src/images/person.png"
 
           });
        
