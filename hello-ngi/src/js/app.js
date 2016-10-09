@@ -37,7 +37,6 @@ function initMap() {
 function signal() {
 	var firebaseRef = firebase.database().ref().child("Locations");
 	firebaseRef.push().set(lati + " " + longi);
-	count++;
 }
 
 
