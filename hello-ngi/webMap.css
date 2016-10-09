@@ -3,16 +3,15 @@
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	background-image: url("src/images/clownBG.png");
-	background-repeat: none;
-	background-size: cover;
+	
+	margin-top: 0px;
   }
 
 #map {
 	
 	width: 100%;
   	height: 100%;
-  	margin-top: -35px;
+  	margin-top: 45px;
   	border: 2px solid #ffffff;
   	margin-bottom: 30px;
 
@@ -20,7 +19,7 @@
 
 #title {
 
-	margin-top: 0px;
+	margin-top: 15px;
 
 }
 .container {
@@ -41,8 +40,10 @@ header {
 }
 
 #main {
-	height: 800px;
-	
+	height: 900px;
+	background-image: url("src/images/clownBG.png");
+	background-repeat: none;
+	background-size: cover;
 	
 
 }
@@ -109,3 +110,40 @@ header {
 	text-align: center;
 	color:white;
 }
+
+.nav {
+	height: 80px;
+	border: none;
+	
+
+}
+
+.navbar-right{
+	margin-right: 50px;
+}
+
+li {
+	margin-top: 30px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+
+#logo {
+
+	height: 80px;
+
+}
+
+.navbar-default {
+	background-color: transparent;
+}
+
+
+
+.navbar-default,
+.navbar-inverse {
+    border: 0;
+  
+}
+
+
