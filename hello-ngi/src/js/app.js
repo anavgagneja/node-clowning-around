@@ -1,4 +1,3 @@
-	//Hi :)
 	var lati;
 	var longi;
 	var firebaseRef = firebase.database().ref();
@@ -39,23 +38,32 @@
 
 		firebaseRef.on('child_added', function(data) {
 
+			var d = new Date();
 			var lati = data.child("latitude").val();
 			var longi = data.child("longitude").val();
+			var time = Math.floor((d.getTime() - data.child("time").val()) / 60000);
+			var contentString = '<div id="content">' + time + '</div>';
+			var infowindow = new google.maps.InfoWindow({
+          		content: contentString
+        	});
 			marker = new google.maps.Marker({
 				position: {lat: parseFloat(lati), lng: parseFloat(longi)},
 				map: map,
 				icon: './images/clown.png',
 				animation: google.maps.Animation.DROP
 			});
+			infowindow.open(map, marker);
 
 		});
 	}
 
 
 	function signal() {
+		var d = new Date();
 		firebaseRef.push({
 			latitude: lati,
-			longitude: longi
+			longitude: longi,
+			time: d.getTime()
 		});
 		marker = new google.maps.Marker({
 			position: {lat: parseFloat(lati), lng: parseFloat(longi)},
