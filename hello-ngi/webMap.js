@@ -60,7 +60,7 @@ var firebaseRef = firebase.database().ref();
       styles: stylesArray
     });
     
-     var infoWindow = new google.maps.InfoWindow({map: map});
+
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
@@ -69,10 +69,7 @@ var firebaseRef = firebase.database().ref();
           lng: position.coords.longitude
         };
 
-        var contentString = '<div id="content">Clown Spotted</div>';
-        var infowindow = new google.maps.InfoWindow({
-        content: contentString
-      });
+       
 
 
         marker2 = new google.maps.Marker({
@@ -82,9 +79,10 @@ var firebaseRef = firebase.database().ref();
 
           });
        
+        
         map.setCenter(pos);
        
-       var markersArray = [];
+      
         firebaseRef.on('child_added', function(data) {
 
           var lati = data.child("latitude").val();
@@ -97,11 +95,6 @@ var firebaseRef = firebase.database().ref();
           });
 
       });
-
-
-
-        
-
 
       }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
