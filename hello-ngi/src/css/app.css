@@ -46,6 +46,7 @@ body {
 
 #btn {
     margin-top: 300px;
+    margin-left: -50%;
     background: #e74c3c;
     color: #fff;
     font-family: Arial;
