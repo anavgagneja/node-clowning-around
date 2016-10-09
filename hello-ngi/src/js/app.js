@@ -87,8 +87,7 @@
 		marker = new google.maps.Marker({
 			position: {lat: parseFloat(lati), lng: parseFloat(longi)},
 			map:map,
-			icon: './images/clown.png',
-			animation: google.maps.Animation.DROP
+			icon: './images/clown.png'
 		});
 	}
 
