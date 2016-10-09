@@ -51,7 +51,9 @@
 				map: map,
 				icon: './images/clown.png',
 			});
-			infowindow.open(map, marker);
+			
+
+
 			var R = 6371e3;
 			var angle1 = lati * (Math.PI/180);
 			var angle2 = lati2* (Math.PI/180);
