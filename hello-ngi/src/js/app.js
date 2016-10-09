@@ -22,7 +22,7 @@ function initMap() {
 		center: myLatLng,
 		streetViewControl: false,
 		zoomControl: false,
-		zoom: 15
+		zoom: 16
 	});
 
 	marker = new google.maps.Marker({
@@ -39,6 +39,11 @@ function signal() {
 	firebaseRef.push({
 		latitude: lati,
 		longitude: longi
+	});
+	marker = new google.maps.Marker({
+		position: {lat: parseFloat(lati), lng: parseFloat(longi)},
+		map:map,
+		icon: './images/clown.png'
 	});
 }
 
