@@ -35,8 +35,11 @@ function initMap() {
 
 
 function signal() {
-	var firebaseRef = firebase.database().ref().child("Locations");
-	firebaseRef.push().set(lati + " " + longi);
+	var firebaseRef = firebase.database().ref();
+	firebaseRef.push({
+		latitude: lati,
+		longitude: longi
+	});
 }
 
 
