@@ -96,12 +96,12 @@ header {
 .info {
 	text-align: center;
 	font-family: 'Roboto', sans-serif;
-
+	font-weight: lighter;
 	font-size: 22px;
 
 }
 
-#pic1 {
+#img {
 	height: 150px;
 }
 
@@ -109,6 +109,7 @@ header {
 	background-color: #e74c3c;
 	text-align: center;
 	color:white;
+	height: 400px;
 }
 
 .nav {
@@ -171,4 +172,55 @@ ul>li {
 
 
 
+}
+
+#img1 {
+	padding-top: 30px;
+	height: 350px;
+}
+
+#about3 {
+	height: 400px;
+	background-color: white;
+}
+
+#img2 {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	height: 380px;
+	margin-left: 40px;
+
+}
+
+#about4 {
+	padding-top: 30px;
+	background-color: #e74c3c;
+	color: white;
+	font-size: 30px;
+	font-weight: lighter;
+	font-family: 'Roboto', sans-serif;
+}
+
+#img3 {
+	height: 200px;
+}
+
+#about5 {
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+
+#img4 {
+	height: 250px;
+	margin-top: 40px;
+}
+
+footer {
+	background-color: #e74c3c;
+	height: 50px;
+	text-align: center;
+	color: white;
+	font-weight: lighter;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
 }

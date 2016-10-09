@@ -48,7 +48,7 @@ var firebaseRef = firebase.database().ref();
   function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: -34.397, lng: 150.644},
-      zoom: 12,
+      zoom: 14,
       styles: stylesArray
     });
     
@@ -61,7 +61,12 @@ var firebaseRef = firebase.database().ref();
           lng: position.coords.longitude
         };
 
-        
+        marker2 = new google.maps.Marker({
+          position: pos,
+          map: map,
+          icon: "src/images/car.png"
+
+          });
        
         map.setCenter(pos);
        
