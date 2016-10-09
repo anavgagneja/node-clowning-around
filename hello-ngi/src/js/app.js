@@ -1,4 +1,3 @@
-	//Hi :)
 	var lati;
 	var longi;
 	var firebaseRef = firebase.database().ref();
@@ -24,8 +23,7 @@
 		var myLatLng = {lat: parseFloat(lati), lng: parseFloat(longi)};
 		map = new google.maps.Map(document.getElementById('map'), {
 			center: myLatLng,
-			streetViewControl: false,
-			zoomControl: false,
+			disableDefaultUI: true,
 			zoom: 16,
 			styles: [  {    "elementType": "geometry",    "stylers": [      {        "color": "#1d2c4d"      }    ]  },  {    "elementType": "labels.text.fill",    "stylers": [      {        "color": "#8ec3b9"      }    ]  },  {    "elementType": "labels.text.stroke",    "stylers": [      {        "color": "#1a3646"      }    ]  },  {    "featureType": "administrative.country",    "elementType": "geometry.stroke",    "stylers": [      {        "color": "#4b6878"      }    ]  },  {    "featureType": "administrative.land_parcel",    "elementType": "labels.text.fill",    "stylers": [      {        "color": "#64779e"      }    ]  },  {    "featureType": "administrative.province",    "elementType": "geometry.stroke",    "stylers": [      {        "color": "#4b6878"      }    ]  },  {    "featureType": "landscape.man_made",    "elementType": "geometry.stroke",    "stylers": [      {        "color": "#334e87"      }    ]  },  {    "featureType": "landscape.natural",    "elementType": "geometry",    "stylers": [      {        "color": "#023e58"      }    ]  },  {    "featureType": "poi",    "elementType": "geometry",    "stylers": [      {        "color": "#283d6a"      }    ]  },  {    "featureType": "poi",    "elementType": "labels.text.fill",    "stylers": [      {        "color": "#6f9ba5"      }    ]  },  {    "featureType": "poi",    "elementType": "labels.text.stroke",    "stylers": [      {        "color": "#1d2c4d"      }    ]  },  {    "featureType": "poi.park",    "elementType": "geometry.fill",    "stylers": [      {        "color": "#023e58"      }    ]  },  {    "featureType": "poi.park",    "elementType": "labels.text.fill",    "stylers": [      {        "color": "#3C7680"      }    ]  },  {    "featureType": "road",    "elementType": "geometry",    "stylers": [      {        "color": "#304a7d"      }    ]  },  {    "featureType": "road",    "elementType": "labels.text.fill",    "stylers": [      {        "color": "#98a5be"      }    ]  },  {    "featureType": "road",    "elementType": "labels.text.stroke",    "stylers": [      {        "color": "#1d2c4d"      }    ]  },  {    "featureType": "road.highway",    "elementType": "geometry",    "stylers": [      {        "color": "#2c6675"      }    ]  },  {    "featureType": "road.highway",    "elementType": "geometry.stroke",    "stylers": [      {        "color": "#255763"      }    ]  },  {    "featureType": "road.highway",    "elementType": "labels.text.fill",    "stylers": [      {        "color": "#b0d5ce"      }    ]  },  {    "featureType": "road.highway",    "elementType": "labels.text.stroke",    "stylers": [      {        "color": "#023e58"      }    ]  },  {    "featureType": "transit",    "elementType": "labels.text.fill",    "stylers": [      {        "color": "#98a5be"      }    ]  },  {    "featureType": "transit",    "elementType": "labels.text.stroke",    "stylers": [      {        "color": "#1d2c4d"      }    ]  },  {    "featureType": "transit.line",    "elementType": "geometry.fill",    "stylers": [      {        "color": "#283d6a"      }    ]  },  {    "featureType": "transit.station",    "elementType": "geometry",    "stylers": [      {        "color": "#3a4762"      }    ]  },  {    "featureType": "water",    "elementType": "geometry",    "stylers": [      {        "color": "#0e1626"      }    ]  },  {    "featureType": "water",    "elementType": "labels.text.fill",    "stylers": [      {        "color": "#4e6d70"      }    ]  }]
 		});
@@ -40,14 +38,20 @@
 
 		firebaseRef.on('child_added', function(data) {
 
+			var d = new Date();
 			var lati2 = data.child("latitude").val();
 			var longi2 = data.child("longitude").val();
+			var time = Math.floor((d.getTime() - data.child("time").val()) / 60000);
+			var contentString = '<div id="content">' + time + '</div>';
+			var infowindow = new google.maps.InfoWindow({
+          		content: contentString
+        	});
 			marker = new google.maps.Marker({
 				position: {lat: parseFloat(lati2), lng: parseFloat(longi2)},
 				map: map,
 				icon: './images/clown.png',
-				animation: google.maps.Animation.DROP
 			});
+			infowindow.open(map, marker);
 			var R = 6371e3;
 			var angle1 = lati * (Math.PI/180);
 			var angle2 = lati2* (Math.PI/180);
@@ -67,9 +71,11 @@
 
 
 	function signal() {
+		var d = new Date();
 		firebaseRef.push({
 			latitude: lati,
-			longitude: longi
+			longitude: longi,
+			time: d.getTime()
 		});
 		marker = new google.maps.Marker({
 			position: {lat: parseFloat(lati), lng: parseFloat(longi)},
