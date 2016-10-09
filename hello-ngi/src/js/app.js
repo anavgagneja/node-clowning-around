@@ -20,6 +20,8 @@ function initMap() {
 	var myLatLng = {lat: parseFloat(lati), lng: parseFloat(longi)};
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: myLatLng,
+		streetViewControl: false,
+		zoomControl: false,
 		zoom: 15
 	});
 
@@ -31,17 +33,13 @@ function initMap() {
 	});
 }
 
-// Initialize Firebase
-var config = {
-	apiKey: "AIzaSyCRcMmP2mEmH4VLSzv2xcxHSyHHTceR-nY",
-	authDomain: "node-clowning-around.firebaseapp.com",
-	databaseURL: "https://node-clowning-around.firebaseio.com",
-	storageBucket: "node-clowning-around.appspot.com",
-	messagingSenderId: "182636227030"
-};
+
+function signal() {
+	
+}
+
 
 gm.info.getCurrentPosition(processPosition, true);
-firebase.initializeApp(config);
 gm.info.watchVehicleData(getPos, ['gps_lat','gps_long']);
 gm.info.getVehicleData(getPos, ['gps_lat','gps_long']);
 
