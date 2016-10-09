@@ -28,7 +28,8 @@ var firebaseRef = firebase.database().ref();
               var longi = data.child("longitude").val();
               marker = new google.maps.Marker({
               position: {lat: parseFloat(lati), lng: parseFloat(longi)},
-              map: map
+              map: map,
+              icon: "src/images/clown.png"
 
               });
           });
