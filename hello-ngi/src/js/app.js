@@ -42,7 +42,7 @@
 			var lati2 = data.child("latitude").val();
 			var longi2 = data.child("longitude").val();
 			var time = Math.floor((d.getTime() - data.child("time").val()) / 60000);
-			var contentString = '<div id="content">' + time + '</div>';
+			var contentString = '<div id="content">Reported ' + time + ' minutes ago!</div>';
 			var infowindow = new google.maps.InfoWindow({
           		content: contentString
         	});
