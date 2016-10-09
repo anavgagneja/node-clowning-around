@@ -10,8 +10,8 @@ body {
   position: absolute;
   top: 90px;
   right: 0;
-  width: 64px;
-  height: 64px;
+  width: 25px;
+  height: 25px;
   overflow: hidden;
   z-index: 1000;
 }
@@ -45,8 +45,7 @@ body {
 }
 
 #btn {
-    margin-top: 300px;
-    margin-left: -50%;
+    margin-top: 260px;
     background: #e74c3c;
     color: #fff;
     font-family: Arial;

@@ -1,12 +1,11 @@
 	var lati;
 	var longi;
 	var firebaseRef = firebase.database().ref();
+	var time;
 
 	function processPosition(position) {
 		lati = position.coords.latitude;
 		longi = position.coords.longitude;
-		//console.log(lati);
-		//console.log(longi);
 		danger = false;
 		initMap();
 	}
@@ -20,7 +19,6 @@
 	var marker;
 	var marker2;
 	var danger = false;
-	// var marker2;
 	function initMap() {
 		var myLatLng = {lat: parseFloat(lati), lng: parseFloat(longi)};
 		map = new google.maps.Map(document.getElementById('map'), {
@@ -38,22 +36,17 @@
 
 		});
 
+		var date;
 		firebaseRef.on('child_added', function(data) {
 
-			var d = new Date();
 			var lati2 = data.child("latitude").val();
 			var longi2 = data.child("longitude").val();
-			var time = Math.floor((d.getTime() - data.child("time").val()) / 60000);
-			var contentString = '<div id="content">Reported ' + time + ' minute(s) ago!</div>';
-			var infowindow = new google.maps.InfoWindow({
-          		content: contentString
-        	});
-			marker2 = new google.maps.Marker({
+			marker = new google.maps.Marker({
 				position: {lat: parseFloat(lati2), lng: parseFloat(longi2)},
 				map: map,
 				icon: './images/clown.png',
 			});
-			infowindow.open(map, marker2);
+		
 			var R = 6371e3;
 			var angle1 = lati * (Math.PI / 180);
 			var angle2 = lati2* (Math.PI / 180);
@@ -65,33 +58,34 @@
 			var d = (R * c) / 100;
 			console.log(d);
 			if(d < 10) {
+				date = data.child("time").val();
 				danger = true;
 			}
 		});
-		dangerAlert();
+		// map.panTo(myLatLng);
+		dangerAlert(date);
 	}
-
 
 	function signal() {
 		var d = new Date();
+		var dString = d.toString().substring(0, 25) + d.toString().substring(33);
 		firebaseRef.push({
 			latitude: lati,
 			longitude: longi,
-			time: d.getTime()
+			time: dString
 		});
 		marker = new google.maps.Marker({
 			position: {lat: parseFloat(lati), lng: parseFloat(longi)},
 			map:map,
-			icon: './images/clown.png',
-			animation: google.maps.Animation.DROP
+			icon: './images/clown.png'
 		});
 	}
 
-	function dangerAlert() {
+	function dangerAlert(date) {
 		if(danger == true) {
 			console.log(danger);
 			var war = document.getElementById('warning');
-			war.innerHTML="DANGER: Clown spotted nearby."; 
+			war.innerHTML="DANGER: Clown spotted nearby on " + date + ". Stay safe fam!"; 
 			war.style.color= "red";
 		} else {
 			console.log(danger);
