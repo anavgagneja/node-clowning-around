@@ -17,9 +17,12 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#"><img class="img-responsive " id="logo" src="src/images/logo.png"></a>
+
+        
       </div>
+      <img class="img-responsive" id="top" src="src/images/text.png">
       <ul class="nav navbar-nav navbar-right">
-        <li ><a href="#">Home</a></li>
+        <li ><a href="#about">About</a></li>
         <li><a href="#">Page 1</a></li>
         <li><a href="#">Page 2</a></li> 
         <li><a href="#">Page 3</a></li> 
@@ -36,7 +39,7 @@
         <div id="map"></div>
 
         <div class="col-xs-12" style="text-align:center;">
-        <button id="more">Learn More</button>
+        <a href="#about"><button id="more" href="#about">Learn More</button></a>
         </div>
 
     </div>   
@@ -66,6 +69,8 @@
 
      </section>
    
+     <script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjC_9L3S2tSQWdTqJ2JRlIDPsYbyVwWo&callback=initMap">
     </script>
