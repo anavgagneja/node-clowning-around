@@ -29,14 +29,13 @@ body {
 }
 
 #map {
-  height: 330px;
+  height: 350px;
   width: 100%;
  z-index: -1;
   position: absolute;
   margin-bottom: -30px !important;
 
 }
-
 
 
 .beforeBtn {
@@ -66,4 +65,9 @@ body {
   background-color: #CF000F;
   cursor: pointer;
 
+}
+
+
+#gpsMaskingIcon {
+  display: none;
 }
