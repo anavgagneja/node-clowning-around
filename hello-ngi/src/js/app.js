@@ -74,6 +74,8 @@
 			longitude: longi,
 			time: dString
 		});
+		danger = true;
+		dangerAlert(dString);
 		marker = new google.maps.Marker({
 			position: {lat: parseFloat(lati), lng: parseFloat(longi)},
 			map:map,
