@@ -16,7 +16,7 @@ $(document).ready(function(){
 
   }
 
-  alert($(window).innerWidth());
+  
 
     nav.find('a').on('click', function () {
       var $el = $(this)
@@ -60,7 +60,7 @@ var firebaseRef = firebase.database().ref();
       styles: stylesArray
     });
     
-
+     var infoWindow = new google.maps.InfoWindow({map: map});
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
