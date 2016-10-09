@@ -1,5 +1,6 @@
 var lati;
 var longi;
+var firebaseRef = firebase.database().ref();
 
 function processPosition(position) {
 	lati = position.coords.latitude;
@@ -31,11 +32,21 @@ function initMap() {
 		title: 'My Car',
 		icon: './images/car.png'
 	});
+
+	firebaseRef.on('child_added', function(data) {
+
+		var lati = data.child("latitude").val();
+		var longi = data.child("longitude").val();
+		marker = new google.maps.Marker({
+			position: {lat: parseFloat(lati), lng: parseFloat(longi)},
+			map: map
+		});
+
+	});
 }
 
 
 function signal() {
-	var firebaseRef = firebase.database().ref();
 	firebaseRef.push({
 		latitude: lati,
 		longitude: longi
