@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/reset.css" type="text/css">
 
     <!-- Your custom files -->
+   
+
     <link rel="stylesheet" href="css/app.css" type="text/css">
 
     <script src="GMLIB/info.js"></script>
@@ -29,12 +31,13 @@
   <div id="wrapper">
     <div id="close"><img src="images/close.png" onclick="gm.system.closeApp()" alt="close"></div>
     <div id="main">
-      <br>
-      <button onclick="signal()">Update Location</button>
+      <div class="beforeBtn">
+      <button id="btn" onclick="signal()">Update Location</button>
+      </div>
       <div id="map"></div>
     </div>
 
-       <div id="map"></div>
+     
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjC_9L3S2tSQWdTqJ2JRlIDPsYbyVwWo&callback=initialize">
     </script>
