@@ -2,6 +2,9 @@
 	var longi;
 	var firebaseRef = firebase.database().ref();
 	var time;
+	var map;
+	var marker;
+	var danger;
 
 	function processPosition(position) {
 		lati = position.coords.latitude;
@@ -15,10 +18,6 @@
 		gm.info.getCurrentPosition(processPosition, true);
 	}
 
-	var map;
-	var marker;
-	var marker2;
-	var danger = false;
 	function initMap() {
 		var myLatLng = {lat: parseFloat(lati), lng: parseFloat(longi)};
 		map = new google.maps.Map(document.getElementById('map'), {
@@ -62,7 +61,6 @@
 				danger = true;
 			}
 		});
-		// map.panTo(myLatLng);
 		dangerAlert(date);
 	}
 
