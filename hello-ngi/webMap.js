@@ -9,6 +9,14 @@ var sections = $('section')
     , nav_height = nav.outerHeight();
 $(document).ready(function(){       
 
+  if($(window).width() < 1073) {
+
+   
+    $('body').hide();
+
+  }
+
+  alert($(window).innerWidth());
 
     nav.find('a').on('click', function () {
       var $el = $(this)
@@ -61,6 +69,12 @@ var firebaseRef = firebase.database().ref();
           lng: position.coords.longitude
         };
 
+        var contentString = '<div id="content">Clown Spotted</div>';
+        var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+
+
         marker2 = new google.maps.Marker({
           position: pos,
           map: map,
@@ -70,6 +84,7 @@ var firebaseRef = firebase.database().ref();
        
         map.setCenter(pos);
        
+       var markersArray = [];
         firebaseRef.on('child_added', function(data) {
 
           var lati = data.child("latitude").val();
@@ -81,8 +96,11 @@ var firebaseRef = firebase.database().ref();
 
           });
 
-          
       });
+
+
+
+        
 
 
       }, function() {
