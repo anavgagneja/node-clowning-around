@@ -101,7 +101,7 @@
   	margin-top: 40px;
   	border: 2px solid #ffffff;
   	margin-bottom: 30px;
-  	margin-left: -7px;
+        margin-left: -7px;
 
 }
 
@@ -211,23 +211,21 @@ header {
 #img1 {
 	padding-top: 30px;
 	height: auto;
-	margin-right: 19px;
 	max-width: 95%;
+        
 }
 
 #about3 {
-	height: 60%;
 	background-color: white;
 	color: #063E58;
 	text-align: right;
+      
 }
 
 #img2 {
-	padding-top: 30px;
+        
 	height: auto;
-	margin-right: 19px;
 	max-width: 95%;
-
 }
 
 #about4 {
@@ -275,8 +273,12 @@ footer {
 	}
 
 		#about2 {
-  	height: 60%;
-  }
+  	        height: 60%;
+               }
+
+         #about3 {
+  	        height: 60%;
+               }
 
   #about2 h2 {
   	padding-top:  100px;
@@ -286,7 +288,10 @@ footer {
   	padding-top:  100px;
   	
   }
+    #img2 {
 
+              padding-top:30px;
+       }
 
 }
 
@@ -299,9 +304,13 @@ footer {
 		margin-top: 5px;
 	}
 
-		#about2 {
-  	height: 60%;
-  }
+          #about2 {
+                  height: 60%;
+            }
+  
+      #about3 {
+          height: 60%;
+      }
 
   #about2 h2 {
   	padding-top:  100px;
@@ -311,6 +320,15 @@ footer {
   	padding-top:  100px;
   	
   }
+    #img1 {
+      
+       max-width: 90%;
+
+     }
+        #img2 {
+
+              padding-top:30px;
+       }
 
 }
 
@@ -328,17 +346,21 @@ footer {
 	}
 
 	#about2 {
-  	height: 60%;
-  }
+  	height: 700px;
+       }
+      #about3 {
+  	height:700px;
+       }
 
-  #about2 h2 {
-  	padding-top:  100px;
-  }
+   #about2 h2 {
+       padding-top: 20px;
+    }
 
-  #about3 h2 {
-  	padding-top:  100px;
-  	
-  }
+
+    #img2 {
+
+              padding-top: 30px;
+       }
 
 
 
@@ -356,9 +378,6 @@ footer {
 		width: 100%;
 	}
 
-	.nav {
-		height: 50px;
-	}
 
 	.head {
 		margin-top: -70px;
@@ -367,16 +386,25 @@ footer {
 
 	#about2 {
 
-		height: 65%;
+		max-height: 700px;
+	}
+
+      #about3{
+
+		max-height:700px;
 	}
 
 	#about2 h2 {
-		padding-top: 50px;
+		padding-top: 30px;
 	}
 
 	#img2 {
-		padding-top: 25%;
-	}
+            
+              padding-top: 30px;
+           
+       }
+
+      
 
 	h2 {
 		font-size: 22px;
@@ -387,5 +415,29 @@ footer {
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
+   #title {
+      margin-bottom: -50px;
+      margin-top: 80px;
+   }
 
-}
+   #about2 {
+
+      height: 60%;
+   }
+
+  #about3 {
+
+      height: 60%;
+
+   }
+   #img2 {
+            width: 100%;
+              padding-top: 30px;
+           margin-left: 0px;
+       }
+
+      #img1 {
+         width: 100%;
+        margin-left: 0px;
+      }
+}		
