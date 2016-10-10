@@ -274,13 +274,17 @@ footer {
 		margin-top: 5px;
 	}
 
-	#about2 {
-  	height: 70%;
+		#about2 {
+  	height: 60%;
+  }
+
+  #about2 h2 {
+  	padding-top:  100px;
   }
 
   #about3 h2 {
   	padding-top:  100px;
-  	height: 70%;
+  	
   }
 
 
@@ -295,13 +299,17 @@ footer {
 		margin-top: 5px;
 	}
 
-	#about2 {
-  	height: 70%;
+		#about2 {
+  	height: 60%;
+  }
+
+  #about2 h2 {
+  	padding-top:  100px;
   }
 
   #about3 h2 {
   	padding-top:  100px;
-  	height: 70%;
+  	
   }
 
 }
@@ -320,12 +328,16 @@ footer {
 	}
 
 	#about2 {
-  	height: 70%;
+  	height: 60%;
+  }
+
+  #about2 h2 {
+  	padding-top:  100px;
   }
 
   #about3 h2 {
   	padding-top:  100px;
-  	height: 70%;
+  	
   }
 
 
