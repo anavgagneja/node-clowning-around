@@ -7,6 +7,93 @@
 	margin-top: 0px;
   }
 
+/* Navbar */
+.navbar-header {
+	 height: 100%;
+}
+.navbar-default {
+	border:none;
+	background-color: transparent;
+	
+	border: none;
+	-webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    -o-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
+
+}
+
+
+
+.navbar-default .navbar-nav>li>a {
+
+	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: lighter;
+	color: white;
+	
+
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+
+	color:#ccc;
+	border-bottom: 1px solid #ccc;
+
+}
+
+.navbar-default .navbar-toggle {
+	margin-top: 25px;
+	color: white;
+	margin-right: 20px;
+	background-color: transparent;
+}
+
+.navbar-default .navbar-toggle:hover {
+
+	background-color: #e74c3c;
+	color: white;
+
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+
+	background-color: white;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border:none;
+}
+
+.navbar-header {
+	height: 80px;
+}
+
+
+.navbar-brand {
+   position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+    height:30px;
+}
+.navbar-brand:hover,
+.navbar-brand:focus {
+  text-decoration: none;
+}
+
+.navbar-brand > img {
+  display: inline-block;
+  margin:auto;
+  height: 60px;
+  display: none;
+}
+
+
+
+
 #map {
 	
 	width: 100%;
@@ -14,6 +101,7 @@
   	margin-top: 40px;
   	border: 2px solid #ffffff;
   	margin-bottom: 30px;
+  	margin-left: -7px;
 
 }
 
@@ -22,10 +110,10 @@
 	margin-top: 15px;
 
 }
-.container {
+#main .container {
 
 	height: 500px;
-	width: 800px;
+	max-width: 800px;
 
 
 }
@@ -73,15 +161,6 @@ header {
 
 }
 
-@media only screen and (max-width: 700px) {
-
-	#map {
-
-		max-width: 700px;
-
-	}
-
-}
 
 .img-responsive {
     margin: 0 auto;
@@ -91,6 +170,7 @@ header {
 #about {
 	padding-top: 60px;
 	background-color: white;
+	color: #063E58;
 }
 
 .info {
@@ -107,40 +187,14 @@ header {
 
 #about2 {
 	background-color: #e74c3c;
-	text-align: center;
+	text-align: left;
 	color:white;
-	height: 400px;
-}
-
-.nav {
-	height: 10px;
-	border: none;
 	
 
-}
-
-.navbar-right{
-	margin-right: 50px;
-}
-
-li {
-	margin-top: 25px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 18px;
 
 }
-ul>li {
-	margin-top: -49px;
-}
-.navbar-default .navbar-nav>li>a {
-	color: white;
-}
 
-.navbar-default .navbar-nav>li>a:hover {
 
-	color: #ccc;
-	border-bottom: 1px solid #ccc;
-}
 
 #logo {
 
@@ -150,45 +204,29 @@ ul>li {
 
 }
 
-.navbar-default {
-	background-color: transparent;
-	transition: background 0.3s ease-in-out;
-}
 
 
 
-.navbar-default,
-.navbar-inverse {
-    border: 0;
-  
-}
-
-#top {
-	height: 70px;
-	margin: 0 auto;
-	margin-left:47%;
-	margin-top: 25px;
-	display: none;
-
-
-
-}
 
 #img1 {
 	padding-top: 30px;
-	height: 350px;
+	height: auto;
+	margin-right: 19px;
+	max-width: 95%;
 }
 
 #about3 {
-	height: 400px;
+	height: 60%;
 	background-color: white;
+	color: #063E58;
+	text-align: right;
 }
 
 #img2 {
 	padding-top: 30px;
-	padding-bottom: 30px;
-	height: 380px;
-	margin-left: 40px;
+	height: auto;
+	margin-right: 19px;
+	max-width: 95%;
 
 }
 
@@ -208,6 +246,7 @@ ul>li {
 #about5 {
 	margin-top: 40px;
 	margin-bottom: 30px;
+	color: #063E58;
 }
 
 #img4 {
@@ -223,4 +262,118 @@ footer {
 	font-weight: lighter;
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
+}
+
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+
+	.navbar-default .navbar-nav>li>a  {
+
+		margin-top: 5px;
+	}
+
+	#about2 {
+  	height: 70%;
+  }
+
+  #about3 h2 {
+  	padding-top:  100px;
+  	height: 70%;
+  }
+
+
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+
+	.navbar-default .navbar-nav>li>a  {
+
+		margin-top: 5px;
+	}
+
+	#about2 {
+  	height: 70%;
+  }
+
+  #about3 h2 {
+  	padding-top:  100px;
+  	height: 70%;
+  }
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+	.navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
+    margin-left: -15px;
+  }
+
+  .navbar-default .navbar-nav>li>a  {
+
+		margin-top: 5px;
+	}
+
+	#about2 {
+  	height: 70%;
+  }
+
+  #about3 h2 {
+  	padding-top:  100px;
+  	height: 70%;
+  }
+
+
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+	#map {
+
+		width: 100%;
+
+	}
+	#main .container {
+		width: 100%;
+	}
+
+	.nav {
+		height: 50px;
+	}
+
+	.head {
+		margin-top: -70px;
+		
+	}
+
+	#about2 {
+
+		height: 65%;
+	}
+
+	#about2 h2 {
+		padding-top: 50px;
+	}
+
+	#img2 {
+		padding-top: 25%;
+	}
+
+	h2 {
+		font-size: 22px;
+
+	}
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+
 }

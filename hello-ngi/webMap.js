@@ -3,18 +3,38 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
 
-      var navClicked = true;
+      
 var sections = $('section')
     , nav = $('nav')
     , nav_height = nav.outerHeight();
 $(document).ready(function(){       
 
-  if($(window).width() < 1073) {
+  /*if($(window).width() < 1073) {
 
    
     $('body').hide();
 
-  }
+  }*/
+
+  var navClicked = false;
+
+   $(".navbar-toggle").click(function() {
+       if(navClicked === false) {
+           $(".navbar-default").css({"background": "#e74c3c"});
+           navClicked = true;
+       } else if($(document).scrollTop() > 40){
+           $(".navbar-default").css({"background": "#e74c3c"});
+           navClicked = false;
+       } else {
+           $(".navbar-default").css({"background": "transparent"});
+           navClicked = false;
+           $('.navbar-default').css({" -webkit-box-shadow": "0 0px 0px rgba(0, 0, 0, 0.5)",
+               "-moz-box-shadow": "0 0px 0px rgba(0, 0, 0, 0.5)",
+               "box-shadow": "0 0px 0px rgba(0, 0, 0, 0.5)"});
+       }
+
+    });
+
 
   
 
@@ -32,14 +52,19 @@ $(document).ready(function(){
       $(document).scroll(function(){
         if($(this).scrollTop() > 40)
         {
+
+            
             $('.navbar-default').css({"background":"#e74c3c"});
-            $('#top').css({"display":"block"});
+
+            $('.navbar-brand > img').css({"display":"block"});
             $('.navbar-default').css({" -webkit-box-shadow": "0 4px 4px rgba(0, 0, 0, 0.5)",
                                         "-moz-box-shadow": "0 4px 4px rgba(0, 0, 0, 0.5)",
                                          "box-shadow": "0 4px 4px rgba(0, 0, 0, 0.5)"});
-        }  else {
+        }  else if(navClicked === false ) {
 
-             $('#top').css({"display":"none"});
+           
+
+             $('.navbar-brand > img').css({"display":"none"});
            $('.navbar-default').css({"background":"transparent"});
             $('.navbar-default').css({" -webkit-box-shadow": "0 0px 0px rgba(0, 0, 0, 0.5)",
                 "-moz-box-shadow": "0 0px 0px rgba(0, 0, 0, 0.5)",
