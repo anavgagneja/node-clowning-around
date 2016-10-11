@@ -101,6 +101,7 @@
   	margin-top: 40px;
   	border: 2px solid #ffffff;
   	margin-bottom: 30px;
+
 }
 
 #title {
@@ -131,6 +132,33 @@ header {
 	background-repeat: none;
 	background-size: cover;
 	
+
+}
+
+#report {
+	font-family: 'Roboto', sans-serif;
+
+	background: #e74c3c;
+    color: #fff;
+    margin-top: -130px;
+    font-weight: lighter;
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: center;
+    border: 3px solid white;
+    transition: all 0.3s ease 0s;
+    outline: 0;
+    padding-top: 7px;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+
+}
+#report:hover {
+
+  background-color: #F22613;
+  cursor: pointer;
 
 }
 
