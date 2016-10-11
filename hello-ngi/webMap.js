@@ -114,6 +114,8 @@ var firebaseRef = firebase.database().ref();
           lng: position.coords.longitude
         };
 
+        
+
        if(window.mobilecheck() === true) {
 
           var report = document.getElementById("report");
@@ -149,6 +151,10 @@ var firebaseRef = firebase.database().ref();
        
         
         map.setCenter(pos);
+
+        document.getElementById("center").onclick = function() {
+          map.setCenter(pos);
+        }
        
       
         firebaseRef.on('child_added', function(data) {
@@ -165,17 +171,17 @@ var firebaseRef = firebase.database().ref();
       });
 
       }, function() {
-        handleLocationError(true, infoWindow, map.getCenter());
+        handleLocationError(true, map.getCenter());
       });
     } else {
       // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
+      handleLocationError(false, map.getCenter());
     }
   }
 
-  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
+  function handleLocationError(browserHasGeolocation, pos) {
+    console.log(pos);
+    console.log(browserHasGeolocation ?
                           'Error: The Geolocation service failed.' :
                           'Error: Your browser doesn\'t support geolocation.');
   }

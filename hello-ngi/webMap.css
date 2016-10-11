@@ -135,6 +135,14 @@ header {
 
 }
 
+#center {
+	height: 50px;
+	cursor: pointer;
+	margin-top: -65%;
+	float: right;
+	margin-right: -4px;
+}
+
 #report {
 	font-family: 'Roboto', sans-serif;
 
@@ -465,4 +473,23 @@ footer {
          width: 100%;
        
       }
-}		
+
+    #center {
+
+    	margin-top: -53%;
+
+    }  
+}	
+@media (max-width: 375px)	 {
+	#center {
+
+    	margin-top: -60%;
+
+    }  
+@media (max-width: 320px)	 {
+	#center {
+
+    	margin-top: -75%;
+
+    }  
+}
