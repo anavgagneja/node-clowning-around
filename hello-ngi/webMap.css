@@ -101,8 +101,6 @@
   	margin-top: 40px;
   	border: 2px solid #ffffff;
   	margin-bottom: 30px;
-        margin-left: -7px;
-
 }
 
 #title {
@@ -422,22 +420,21 @@ footer {
 
    #about2 {
 
-      height: 60%;
+      height: 65%;
    }
 
   #about3 {
 
-      height: 60%;
+      height: 65%;
 
    }
    #img2 {
             width: 100%;
-              padding-top: 30px;
-           margin-left: 0px;
+         
        }
 
       #img1 {
          width: 100%;
-        margin-left: 0px;
+       
       }
 }		
