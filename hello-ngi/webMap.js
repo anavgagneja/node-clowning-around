@@ -108,7 +108,7 @@ var firebaseRef = firebase.database().ref();
   };
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
+      navigator.geolocation.watchPosition(function(position) {
         var pos = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
