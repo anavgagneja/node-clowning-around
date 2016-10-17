@@ -246,6 +246,8 @@ header {
 	padding-top: 30px;
 	height: auto;
 	max-width: 95%;
+	margin-right: 0px;
+	margin-left: 7px;
         
 }
 
@@ -260,6 +262,8 @@ header {
         
 	height: auto;
 	max-width: 95%;
+	margin-right: 7px;
+	margin-left: 0px;
 }
 
 #about4 {
@@ -307,11 +311,11 @@ footer {
 	}
 
 		#about2 {
-  	        height: 60%;
+  	        padding-bottom: 100px;
                }
 
          #about3 {
-  	        height: 60%;
+  	       padding-bottom: 100px;
                }
 
   #about2 h2 {
@@ -339,11 +343,11 @@ footer {
 	}
 
           #about2 {
-                  height: 60%;
+                  height: 450px;
             }
   
       #about3 {
-          height: 60%;
+          height: 450px;
       }
 
   #about2 h2 {
@@ -380,10 +384,10 @@ footer {
 	}
 
 	#about2 {
-  	height: 700px;
+  	padding-bottom: 100px;
        }
       #about3 {
-  	height:700px;
+  	padding-bottom: 100px;
        }
 
    #about2 h2 {
@@ -420,12 +424,12 @@ footer {
 
 	#about2 {
 
-		max-height: 700px;
+		padding-bottom: 100px;
 	}
 
       #about3{
 
-		max-height:700px;
+		padding-bottom: 100px;
 	}
 
 	#about2 h2 {
